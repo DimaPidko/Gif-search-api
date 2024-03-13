@@ -6,9 +6,9 @@ const useGifService = () => {
 
     const _apiKey = '9NQlGcnpQygpG8NU9WaFbpZZlEwm2AfD';
 
-    const getAllGif = async (offset = 0) => {
+    const getAllGif = async (offset = 0, rating = 'r') => {
         const res = await request(
-            `https://api.giphy.com/v1/gifs/trending?api_key=${_apiKey}&limit=9&offset=${offset}`
+            `https://api.giphy.com/v1/gifs/trending?api_key=${_apiKey}&limit=9&offset=${offset}&rating=${rating}`
         );
         return res.data.map(_transformGif);
     };

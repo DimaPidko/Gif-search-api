@@ -52,7 +52,11 @@ const ShowGif = () => {
     return (
         <>
             {items}
-            <button onClick={() => onRequest(offset)}>Load More</button>
+            <button
+                onClick={() => onRequest(offset)}
+                className={styles.loadMore}>
+                Load More
+            </button>
         </>
     );
 };
