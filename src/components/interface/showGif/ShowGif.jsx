@@ -29,12 +29,14 @@ const ShowGif = () => {
                 <li
                     key={item.id}
                     className={styles.gifWrapper_item}>
-                    <a href={item.url}>
-                        <img
-                            src={item.gif}
-                            alt={item.type}
-                        />
-                    </a>
+                    <div className={styles.gifWrapper_item_div}>
+                        <a href={item.url}>
+                            <img
+                                src={item.gif}
+                                alt={item.type}
+                            />
+                        </a>
+                    </div>
                 </li>
             );
         });
