@@ -13,6 +13,13 @@ const useGifService = () => {
         return res.data.map(_transformGif);
     };
 
+    const getRandomGif = async () => {
+        const res = await request(
+            `https://api.giphy.com/v1/gifs/random?api_key=${_apiKey}`
+        );
+        return { gif: res.data.images.fixed_height.url, url: res.data.url };
+    };
+
     const _transformGif = (data) => {
         return {
             type: data.type,
@@ -22,7 +29,7 @@ const useGifService = () => {
         };
     };
 
-    return { getAllGif };
+    return { getAllGif, getRandomGif };
 };
 
 export default useGifService;
