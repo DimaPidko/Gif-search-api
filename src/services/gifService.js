@@ -24,7 +24,7 @@ const useGifService = () => {
         return {
             type: data.type,
             id: data.id,
-            gif: data.images.fixed_height.url,
+            gif: data.images.fixed_height_small.url,
             url: data.url,
         };
     };
